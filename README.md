@@ -1,5 +1,5 @@
 # WEB TECHNOLOGIES LAB AND PROJECT
-## EcoExchange:Food Sharing and Donation Platform
+## EcoExchange:Food Sharing and Selling Platform
 Developing the project proposal idea of Software Engineering course.<br> 
 Project Info: https://github.com/AIUBCodeArchives/Software_Engineering_Sem6
 <!--
