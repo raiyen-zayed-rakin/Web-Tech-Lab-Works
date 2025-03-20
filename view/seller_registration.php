@@ -1,7 +1,7 @@
 <html>
 <head>
     <title>Seller Registration</title>
-    <link rel="stylesheet" href="css/mystyle.css">
+    <link rel="stylesheet" href="styles/seller_registration.css">
 </head>
     <h1>Seller Registration</h1>
 
@@ -19,7 +19,7 @@
 
         <label for="openingDate">Official Opening Date:</label><br>
         <input type="date" id="openingDate" name="openingDate"><br>
-
+        <div class = "radio_button">
         <label>Register As:</label><br>
         <input type="radio" id="owner" name="registerAs" value="owner">
         <label for="owner">Owner</label>
@@ -29,6 +29,7 @@
 
         <input type="radio" id="other" name="registerAs" value="other">
         <label for="other">Other</label><br>
+        </div>
     </fieldset>
 
     <fieldset>

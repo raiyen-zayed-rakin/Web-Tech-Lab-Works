@@ -1,0 +1,89 @@
+/* Universal Selector */
+* {
+    box-sizing: border-box;
+}
+
+/* element Selector */
+h1 {
+    text-align: center;
+    margin: 20px 0;
+    color: #333;
+}
+
+form {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+
+/* ID Selector */
+#main-title {
+    text-align: center;
+    margin: 20px 0;
+    color: #333;
+}
+
+/* Class Selector for radio buttons */
+.radio_button {
+    margin: 10px 0;
+}
+
+.radio_button input[type="radio"] {
+    margin-right: 10px;
+}
+
+.radio_button label {
+    margin-left: 5px;
+    font-size: 16px;
+}
+
+.radio_button input[type="radio"]:checked + label {
+    color: #007bff;
+}
+
+/* Attribute Selector */
+input[type="text"], input[type="email"], input[type="tel"], input[type="password"], input[type="date"] {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type="submit"], input[type="reset"] {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    z-index: 1;
+    position: relative;
+}
+
+input[type="submit"]:hover, input[type="reset"]:hover {
+    background-color: #0056b3;
+}
+
+/* Additional properties */
+legend {
+    font-weight: bold;
+    color: #007bff;
+}
+
+a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
