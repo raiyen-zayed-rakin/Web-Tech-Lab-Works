@@ -1,10 +1,11 @@
 <html>
 <head>
     <title>Seller Registration</title>
+    <link rel="stylesheet" href="css/mystyle.css">
 </head>
     <h1>Seller Registration</h1>
 
-<form action="" autocomplete="on" target="_blank" method="post">
+<form action="" autocomplete="on" target="_blank" method="get">
     <fieldset>
         <legend>Business Information</legend>
         <label for="businessName">Business Name:</label><br>
