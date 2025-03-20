@@ -1,0 +1,105 @@
+body {
+    background-color: #62b6b7;
+    
+    font-family: Montserrat, Arial, Helvetica, sans-serif;
+}
+
+.heading-title {
+    text-align: center;
+    color: white;
+    font-size: 50px;
+    margin-bottom: 15px;
+}
+#body-portion {
+    background-color: white;
+    margin: auto;
+    width: 40%;
+    padding:  20px 30px;
+    border-radius: 15px;
+    box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+    display: flex;
+}
+
+.name-section {
+    display: flex;
+    justify-content: space-between;
+}
+
+.fname-section {
+    display: inline;
+}
+.fname-section .input-box {
+    width: 250px;
+}
+
+.lname-section {
+    display: inline;
+}
+.lname-section .input-box {
+    width: 250px;
+}
+
+.dob-gender-section {
+    margin-top: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.own-work-radio {
+    margin: 10px 0px;
+}
+
+.password-section {
+    display: flex;
+    justify-content: space-between;
+}
+
+.pass-section {
+    display: inline;
+}
+.pass-section .input-box {
+    width: 250px;
+}
+
+.confirm-pass-section {
+    display: inline;
+}
+.confirm-pass-section .input-box {
+    width: 250px;
+}
+.info-box {
+
+}
+
+.input-box {
+    background-color: #62b6b7;
+    opacity: 20%;
+    color: black;
+    /* width: 580px; */
+    padding: 10px 20px;
+    border-radius: 5px;
+    width: 562px;
+}
+
+.date-box {
+    width: 120px;
+    padding: 5px 20px;
+}
+
+.btn-section {
+    display: inline;
+}
+
+.btn {
+    background-color: #62b6b7;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px 10px;
+    width: 300px;
+    border-radius: 10px;
+    display: inline-block;
+    margin-top: 10px;
+
+}
