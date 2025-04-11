@@ -1,0 +1,97 @@
+
+body {
+    background-color: #111827;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; 
+    color: white;
+
+}
+
+.calculator-body {
+    background-color: #1F2937;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+.input-section,
+.result-output {
+    margin-bottom: 10px;
+}
+
+input {
+    padding: 10px;
+    border-radius: 20px;
+    font-size: 20px;
+}
+
+.operator-lbl {
+    font-size: 30px;
+}
+
+.result-output {
+    display: flex;
+    align-items: center;
+
+}
+.output-box {
+    width: 100%;
+}
+
+.input-section,
+.result-output,
+.result-process {
+    width: 100%;
+}
+
+.operator-btn-section{
+    display: flex;
+    flex-direction: row;
+    margin-top: 10px;
+    width: 100%;
+    gap: 8px;
+}
+
+div button {
+    flex:1;
+}
+
+button {
+    background-color: #F97316;
+    padding: 20px;
+    font-size: 15px;
+    font-weight: bold;
+    color:white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    
+}
+
+.result-process {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    margin-top: 10px;
+    width: 100%;
+    gap: 8px;
+}
+.clear-btn {
+    width: 100%;
+    background-color:gray;
+    font-size: 20px;
+    font-weight: 100;
+}
+
+.equal-btn {
+    width: 100%;
+    background-color:gray;
+    font-size: 20px;
+}
+
