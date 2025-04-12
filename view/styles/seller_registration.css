@@ -1,13 +1,5 @@
-/* Universal Selector */
 * {
     box-sizing: border-box;
-}
-
-/* element Selector */
-h1 {
-    text-align: center;
-    margin: 20px 0;
-    color: #333;
 }
 
 form {
@@ -17,18 +9,17 @@ form {
     background: #fff;
     border: 1px solid #ccc;
     border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
 }
 
-
-/* ID Selector */
 #main-title {
     text-align: center;
+    color: #007bff;
     margin: 20px 0;
-    color: #333;
+    font-size: 40px;
 }
 
-/* Class Selector for radio buttons */
+
 .radio_button {
     margin: 10px 0;
 }
@@ -46,14 +37,14 @@ form {
     color: #007bff;
 }
 
-/* Attribute Selector */
 input[type="text"], input[type="email"], input[type="tel"], input[type="password"], input[type="date"] {
     width: 100%;
     padding: 10px;
     margin: 8px 0;
     border: 1px solid #ccc;
-    border-radius: 4px;
+    border-radius: 20px;
     box-sizing: border-box;
+    opacity: 50%;
 }
 
 input[type="submit"], input[type="reset"] {
@@ -73,7 +64,6 @@ input[type="submit"]:hover, input[type="reset"]:hover {
     background-color: #0056b3;
 }
 
-/* Additional properties */
 legend {
     font-weight: bold;
     color: #007bff;
