@@ -3,9 +3,9 @@
     <title>Seller Registration</title>
     <link rel="stylesheet" href="styles/seller_registration.css">
 </head>
-    <h1>Seller Registration</h1>
+<h1 id="main-title">Seller Registration</h1>
 
-<form action="" autocomplete="on" target="_blank" method="get">
+<form action="seller_registration.php" autocomplete="on" target="_blank" method="post">
     <fieldset>
         <legend>Business Information</legend>
         <label for="businessName">Business Name:</label><br>
