@@ -47,4 +47,5 @@ clearButton.addEventListener("click", function(){
     firstInput.value= "0";
     secondInput.value= "0";
     outputBox.value= "0";
+    operatorLabel.innerText = "..."
 })
