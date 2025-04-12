@@ -8,7 +8,7 @@ let outputBox = document.querySelector(".output-box");
 
 let currentOperator = "";
 
-operatorButtons.forEach(function(button) {
+operatorButtons.forEach(button => {
     button.addEventListener("click", () => {
         currentOperator = button.innerText;
         operatorLabel.innerText = currentOperator;
