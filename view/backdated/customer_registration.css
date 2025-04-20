@@ -1,0 +1,166 @@
+/* General Body Styling */
+body {
+    background-color: #62b6b7;
+    font-family: Montserrat, Arial, Helvetica, sans-serif;
+    margin-bottom: 30px;
+    padding: 0;
+}
+
+.heading-title {
+    text-align: center;
+    color: white;
+    font-size: 50px;
+    margin-bottom: 15px;
+}
+
+/* Form Container */
+#body-portion {
+    background-color: white;
+    margin: auto;
+    width: 90%;
+    max-width: 700px;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+    display: flex;
+    flex-direction: column;
+}
+
+.info-box {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Input Fields */
+.input-box,
+.date-box {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 20px;
+    background-color: #e0f7f7;
+    color: black;
+    opacity: 0.9;
+    box-sizing: border-box;
+}
+
+.input-box::placeholder {
+    color: #333;
+    opacity: 0.8;
+}
+
+/* Name Section */
+.name-section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: space-between;
+}
+
+.fname-section,
+.lname-section {
+    flex: 1 1 48%;
+}
+
+/* DOB & Gender Section */
+.dob-gender-section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.gender-label {
+    
+}
+
+.dob-gender-section > div {
+    flex: 1 1 48%;
+}
+
+/* Gender Radio Buttons */
+.dob-gender-section input[type="radio"] {
+    margin-right: 5px;
+    margin-left: 10px;
+}
+
+/* Password Section */
+.password-section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: space-between;
+}
+
+.pass-section,
+.confirm-pass-section {
+    flex: 1 1 48%;
+}
+
+/* Button Styling */
+.btn {
+    background-color: #62b6b7;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px;
+    border: none;
+    width: 100%;
+    border-radius: 10px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+/* Button Group Layout */
+.btn-section {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+/* Restaurant Radio Group */
+.own-work-radio {
+    margin-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .heading-title {
+        font-size: 25px;
+    }
+
+    #body-portion{
+        padding: 10px;
+    }
+
+    .name-section,
+    .password-section,
+    .dob-gender-section,
+    .btn-section {
+        flex-direction: column;
+    }
+
+    .fname-section,
+    .lname-section,
+    .pass-section,
+    .confirm-pass-section,
+    .dob-gender-section > div {
+        flex: 1 1 100%;
+    }
+
+    .own-work-radio{
+        flex-direction: column;
+    }
+
+    .btn {
+        max-width: 100%;
+        margin-top: 0px;
+    }
+}

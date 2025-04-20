@@ -1,166 +1,172 @@
-/* General Body Styling */
-body {
-    background-color: #62b6b7;
-    font-family: Montserrat, Arial, Helvetica, sans-serif;
-    margin-bottom: 30px;
-    padding: 0;
-}
-
-.heading-title {
-    text-align: center;
-    color: white;
-    font-size: 50px;
-    margin-bottom: 15px;
-}
-
-/* Form Container */
-#body-portion {
-    background-color: white;
-    margin: auto;
-    width: 90%;
-    max-width: 700px;
-    padding: 20px;
-    border-radius: 15px;
-    box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
-    display: flex;
-    flex-direction: column;
-}
-
-.info-box {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-
-/* Input Fields */
-.input-box,
-.date-box {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid black;
-    border-radius: 20px;
-    background-color: #e0f7f7;
-    color: black;
-    opacity: 0.9;
+* {
     box-sizing: border-box;
-}
+    font-family: 'Inter', sans-serif;
+  }
 
-.input-box::placeholder {
+  body {
+    margin: 0;
+    padding: 0;
+    background: #f4f6f9;
     color: #333;
-    opacity: 0.8;
-}
+  }
 
-/* Name Section */
-.name-section {
+  header {
+      background: #62b6b7;
+      color: white;
+      padding: 1.5rem 1rem;
+      text-align: center;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  }
+
+
+  .heading-title {
+    margin: 0;
+    font-size: 2rem;
+    font-weight: 600;
+  }
+
+  main {
+  display: flex;
+  justify-content: center;
+  padding: 6rem 1rem 2rem; /* Increased top padding */
+  }
+
+  span {
+    color: red
+  }
+
+  .error-message {
+    color: red;
+    font-size: 0.85em;
+    display: block;
+    margin-bottom: 20px;
+  }
+  
+
+  form.info-box {
+    background: #ffffff;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    width: 100%;
+  }
+
+  .info-box label {
+    display: block;
+    margin-bottom: 0.4rem;
+    font-weight: 500;
+  }
+
+  .input-box,
+  .date-box {
+    width: 100%;
+    padding: 0.75rem;
+    margin-bottom: 0px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    transition: border-color 0.3s ease;
+  }
+
+  .input-box:focus,
+  .date-box:focus {
+    border-color: #3498db;
+    outline: none;
+  }
+
+  .name-section,
+  .password-section,
+  .dob-gender-section {
     display: flex;
+    gap: 1rem;
     flex-wrap: wrap;
-    gap: 10px;
-    justify-content: space-between;
-}
+  }
 
-.fname-section,
-.lname-section {
-    flex: 1 1 48%;
-}
+  .fname-section,
+  .lname-section,
+  .pass-section,
+  .confirm-pass-section,
+  .dob-gender-section > div {
+    flex: 1;
+    min-width: 48%;
+  }
 
-/* DOB & Gender Section */
-.dob-gender-section {
+  .gender-label {
+    margin-bottom: 0.5rem;
+    display: block;
+  }
+
+  .own-work-radio {
+    margin-bottom: 1.5rem;
     display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: space-between;
+    justify-content: space-around;
+  }
+
+  .own-work-radio > div {
+    margin-top: 0.5rem;
+  }
+
+  .radio-options {
+    display: flex;
+    gap: 1.5rem;
     align-items: center;
-}
+    justify-content: center;
+    margin-top: 0.5rem;
+  }
+  
 
-.gender-label {
-    
-}
+  input[type="radio"] {
+    margin-right: 0.5rem;
+  }
 
-.dob-gender-section > div {
-    flex: 1 1 48%;
-}
-
-/* Gender Radio Buttons */
-.dob-gender-section input[type="radio"] {
-    margin-right: 5px;
-    margin-left: 10px;
-}
-
-/* Password Section */
-.password-section {
+  .btn-section {
     display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
     justify-content: space-between;
-}
+    gap: 1rem;
+  }
 
-.pass-section,
-.confirm-pass-section {
-    flex: 1 1 48%;
-}
+  .btn {
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
 
-/* Button Styling */
-.btn {
+  .create-account-btn {
     background-color: #62b6b7;
     color: white;
-    font-size: 16px;
-    font-weight: bold;
-    padding: 10px;
-    border: none;
-    width: 100%;
-    border-radius: 10px;
-    margin-top: 10px;
-    cursor: pointer;
-}
+  }
 
-/* Button Group Layout */
-.btn-section {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    gap: 10px;
-}
+  .create-account-btn:hover {
+    background-color: #5c9e9f;
+  }
 
-/* Restaurant Radio Group */
-.own-work-radio {
-    margin-top: 10px;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 10px;
-}
+  .reset-fields-btn {
+    background-color: #bdc3c7;
+    color: #2c3e50;
+  }
 
-/* Responsive */
-@media (max-width: 600px) {
-    .heading-title {
-        font-size: 25px;
-    }
+  .reset-fields-btn:hover {
+    background-color: #95a5a6;
+  }
 
-    #body-portion{
-        padding: 10px;
-    }
-
-    .name-section,
-    .password-section,
-    .dob-gender-section,
-    .btn-section {
-        flex-direction: column;
-    }
-
+  @media (max-width: 600px) {
     .fname-section,
     .lname-section,
     .pass-section,
     .confirm-pass-section,
     .dob-gender-section > div {
-        flex: 1 1 100%;
+      min-width: 100%;
     }
 
-    .own-work-radio{
-        flex-direction: column;
+    .btn-section {
+      flex-direction: column;
     }
-
-    .btn {
-        max-width: 100%;
-        margin-top: 0px;
-    }
-}
+  }

@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Customer Registration</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: 'Inter', sans-serif;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background: #f4f6f9;
+      color: #333;
+    }
+
+    header {
+        background: #62b6b7;
+        color: white;
+        padding: 1.5rem 1rem;
+        text-align: center;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1000;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    }
+
+
+    .heading-title {
+      margin: 0;
+      font-size: 2rem;
+      font-weight: 600;
+    }
+
+    main {
+    display: flex;
+    justify-content: center;
+    padding: 6rem 1rem 2rem; /* Increased top padding */
+    }
+
+    form.info-box {
+      background: #ffffff;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      max-width: 600px;
+      width: 100%;
+    }
+
+    .info-box label {
+      display: block;
+      margin-bottom: 0.4rem;
+      font-weight: 500;
+    }
+
+    .input-box,
+    .date-box {
+      width: 100%;
+      padding: 0.75rem;
+      margin-bottom: 1.5rem;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      transition: border-color 0.3s ease;
+    }
+
+    .input-box:focus,
+    .date-box:focus {
+      border-color: #3498db;
+      outline: none;
+    }
+
+    .name-section,
+    .password-section,
+    .dob-gender-section {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .fname-section,
+    .lname-section,
+    .pass-section,
+    .confirm-pass-section,
+    .dob-gender-section > div {
+      flex: 1;
+      min-width: 48%;
+    }
+
+    .gender-label {
+      margin-bottom: 0.5rem;
+      display: block;
+    }
+
+    .own-work-radio {
+      margin-bottom: 1.5rem;
+    }
+
+    .own-work-radio > div {
+      margin-top: 0.5rem;
+    }
+
+    input[type="radio"] {
+      margin-right: 0.5rem;
+    }
+
+    .btn-section {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .btn {
+      padding: 0.75rem 1.5rem;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .create-account-btn {
+      background-color: #62b6b7;
+      color: white;
+    }
+
+    .create-account-btn:hover {
+      background-color: #5c9e9f;
+    }
+
+    .reset-fields-btn {
+      background-color: #bdc3c7;
+      color: #2c3e50;
+    }
+
+    .reset-fields-btn:hover {
+      background-color: #95a5a6;
+    }
+
+    @media (max-width: 600px) {
+      .fname-section,
+      .lname-section,
+      .pass-section,
+      .confirm-pass-section,
+      .dob-gender-section > div {
+        min-width: 100%;
+      }
+
+      .btn-section {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1 class="heading-title">Customer Registration</h1>
+  </header>
+
+  <main>
+    <form class="info-box" action="#" method="post">
+      <div class="name-section">
+        <div class="fname-section">
+          <label for="fname">First Name</label>
+          <input class="input-box" id="fname" name="fname" type="text" placeholder="Enter first name" required />
+        </div>
+        <div class="lname-section">
+          <label for="lname">Last Name</label>
+          <input class="input-box" id="lname" name="lname" type="text" placeholder="Enter last name" required />
+        </div>
+      </div>
+
+      <label for="email">Email Address</label>
+      <input class="input-box" id="email" name="email" type="email" placeholder="Enter email address" required />
+
+      <label for="phone">Phone Number</label>
+      <input class="input-box" id="phone" name="phone" type="tel" placeholder="Enter phone number" required />
+
+      <div class="dob-gender-section">
+        <div>
+          <label for="dob">Date of Birth</label>
+          <input class="date-box" id="dob" name="dob" type="date" required />
+        </div>
+        <div>
+            <label for="gender">Gender</label>
+            <select class="input-box" id="gender" name="gender" required>
+              <option value="" disabled selected>Select gender</option>
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+              <option value="other">Other</option>
+              <option value="prefer_not_to_say">Prefer not to say</option>
+            </select>
+          </div>
+          
+      </div>
+
+      <label for="address">Current Address</label>
+      <input class="input-box" id="address" name="address" type="text" placeholder="Enter address" required />
+
+      <label for="username">Create Username</label>
+      <input class="input-box" id="username" name="username" type="text" placeholder="Enter username" required />
+
+      <div class="own-work-radio">
+        <label>Own or work in a restaurant business</label>
+        <div>
+          <input type="radio" id="restaurant-yes" name="restaurant" value="yes" />
+          <label for="restaurant-yes">Yes</label>
+          <input type="radio" id="restaurant-no" name="restaurant" value="no" />
+          <label for="restaurant-no">No</label>
+        </div>
+      </div>
+
+      <div class="password-section">
+        <div class="pass-section">
+          <label for="password">Password</label>
+          <input class="input-box" id="password" name="password" type="password" placeholder="Enter password" required />
+        </div>
+        <div class="confirm-pass-section">
+          <label for="confirm-password">Confirm Password</label>
+          <input class="input-box" id="confirm-password" name="confirm-password" type="password" placeholder="Re-enter password" required />
+        </div>
+      </div>
+
+      <div class="btn-section">
+        <input class="btn reset-fields-btn" type="reset" value="Reset Fields" />
+        <input class="btn create-account-btn" type="submit" value="Create Account" />
+      </div>
+    </form>
+  </main>
+
+  <footer></footer>
+</body>
+</html>
