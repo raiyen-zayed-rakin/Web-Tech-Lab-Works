@@ -1,0 +1,273 @@
+/* Reset & Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family:sans-serif;
+  background-color: #FFF;
+  line-height: 1.5;
+}
+
+button {
+  background-color: rgba(132, 209, 135, 1);
+  border: none;
+  color: white;
+  font-weight: bold;
+}
+/* Max Width Wrapper */
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px;
+}
+
+/* HEADER: Top Bar */
+
+.header{
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  background-color: #fff;
+  border-bottom: 1px solid #eee;
+
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: #2e7d32;
+}
+
+.search-container {
+  display: flex;
+  width: 500px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.search-container input {
+  flex: 1;
+  border: none;
+  padding: 8px 10px;
+  outline: none;
+}
+
+.search-container button {
+  background-color: rgba(132, 209, 135, 1);
+  color: white;
+  border: none;
+  padding: 0 20px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.search-container button:hover {
+  background-color: #49adb1;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  font-size: 14px;
+}
+
+.header-right i {
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.signin {
+  color: #e91e63;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* HEADER: Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #333;
+  color: white;
+  padding: 10px 30px;
+}
+
+.navbar-left a {
+  color: white;
+  text-decoration: none;
+  margin-right: 20px;
+  font-size: 14px;
+}
+
+.navbar-left a:hover {
+  opacity: 0.7;
+}
+
+.navbar-left a.active {
+  font-weight: bold;
+  border-bottom: 2px solid white;
+}
+
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* HERO SECTION */
+.hero {
+  text-align: center;
+  margin-bottom: 40px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  display: flex;
+  flex:2;
+  background-color: rgba(237, 242, 238, 1);
+  border-radius: 5px;
+}
+
+.hero img {
+  width: 100%;
+  height: auto;
+  margin-top: 20px;
+}
+
+.hero-text {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 50px;
+}
+
+.hero-text-inner {
+  text-align: left;
+}
+.hero-text-inner button{
+  padding: 10px 20px;
+  border-radius: 18px;
+}
+/* FEATURES */
+.features {
+  display: flex;
+  justify-content: space-evenly;
+  gap: 100px;
+  margin: 40px 0;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 10px 20px 20px 10px;
+
+}
+
+.feature {
+  text-align: center;
+}
+
+/* CATEGORIES */
+.categories {
+  text-align: center;
+  margin: 40px 0;
+}
+
+.category-grid {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+/* PRODUCTS */
+.products {
+  text-align: center;
+  margin: 40px 0;
+}
+
+.product-grid {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.product-grid div {
+  text-align: center;
+}
+
+/* OFFER BANNER */
+.offer-banner {
+  position: relative;
+  text-align: center;
+  margin: 50px 0;
+}
+
+.offer-banner img {
+  width: 100%;
+  height: auto;
+}
+
+.offer-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-size: 3rem;
+  color: white;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 15px 25px;
+  border-radius: 10px;
+  transform: translate(-50%, -50%);
+}
+
+/* POST ITEM FORM */
+.post-item {
+  text-align: center;
+  margin: 50px 0;
+}
+
+.post-item form {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.post-item input {
+  padding: 10px;
+  width: 300px;
+}
+
+.post-item button {
+  padding: 10px 20px;
+}
+
+/* FOOTER */
+.footer {
+  background: #222;
+  color: #fff;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.footer-columns {
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+  margin-bottom: 20px;
+}
+
+.footer-columns div h4 {
+  margin-bottom: 10px;
+}

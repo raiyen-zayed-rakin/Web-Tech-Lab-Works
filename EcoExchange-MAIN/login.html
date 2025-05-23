@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sign In - Food Exchange</title>
+  <link rel="stylesheet" href="css/customer_registration.css" />
+</head>
+<body>
+  <header>
+    <h1>Food Exchange Sign In</h1>
+  </header>
+
+  <main>
+    <section>
+      <h2>Sign In</h2>
+      <form action="signin.php" method="post">
+        <label for="username">Username</label>
+        <input type="text" id="username" name="username" required />
+
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" required />
+
+        <label for="userType">Login as:</label>
+        <select id="userType" name="userType" required>
+          <option value="seller">Seller</option>
+          <option value="customer">Customer</option>
+          <option value="admin">Admin</option>
+        </select>
+
+        <button type="submit">Sign In</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Food Exchange</p>
+  </footer>
+</body>
+</html>
