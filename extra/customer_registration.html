@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Food Exchange - Registration</title>
+  <link rel="stylesheet" href="../css/customer_registration.css" />
+</head>
+<body>
+  <header>
+    <h1>Food Exchange Registration</h1>
+  </header>
+
+  <main>
+    <section>
+      <h2>Customer Registration</h2>
+      <form action="customer_registration.php" method="post">
+        <fieldset>
+          <legend>Personal Info</legend>
+          <label>First Name: <input type="text" name="fname"></label><br>
+          <label>Last Name: <input type="text" name="lname"></label><br>
+          <label>Email: <input type="email" name="email"></label><br>
+          <label>Phone: <input type="tel" name="phone"></label><br>
+          <label>DOB: <input type="date" name="dob"></label><br>
+          <label>Gender:
+            <select name="gender">
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+              <option value="other">Other</option>
+            </select>
+          </label><br>
+          <label>Address: <input type="text" name="address"></label><br>
+          <label>Own/Work in Restaurant:
+            <input type="radio" name="restaurant" value="yes"> Yes
+            <input type="radio" name="restaurant" value="no"> No
+          </label><br>
+        </fieldset>
+        <fieldset>
+          <legend>Account</legend>
+          <label>Username: <input type="text" name="username"></label><br>
+          <label>Password: <input type="password" name="password"></label><br>
+        </fieldset>
+        <button type="submit">Register Customer</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Food Exchange</p>
+  </footer>
+  
+  <script src="../js/customer_registration.js"></script>
+</body>
+</html>

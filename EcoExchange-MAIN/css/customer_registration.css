@@ -1,69 +1,172 @@
-body {
-  font-family: Arial, sans-serif;
-  background-color: #f7f9fc;
-  margin: 0;
-  padding: 0;
-  color: #333;
-}
+* {
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+  }
 
-header, footer {
-  background-color: #004080;
-  color: white;
-  text-align: center;
-  padding: 1em 0;
-}
+  body {
+    margin: 0;
+    padding: 0;
+    background: #f4f6f9;
+    color: #333;
+  }
 
-main {
-  padding: 20px;
+  header {
+      background: #62b6b7;
+      color: white;
+      padding: 1.5rem 1rem;
+      text-align: center;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  }
+
+
+  .heading-title {
+    margin: 0;
+    font-size: 2rem;
+    font-weight: 600;
+  }
+
+  main {
   display: flex;
-  flex-wrap: wrap;
-  gap: 40px;
   justify-content: center;
-}
+  padding: 6rem 1rem 2rem; /* Increased top padding */
+  }
 
-section {
-  background-color: #ffffff;
-  border-radius: 8px;
-  padding: 20px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  width: 400px;
-}
+  span {
+    color: red
+  }
 
-h2 {
-  color: #004080;
-  border-bottom: 2px solid #004080;
-  padding-bottom: 5px;
-}
+  .error-message {
+    color: red;
+    font-size: 0.85em;
+    display: block;
+    margin-bottom: 20px;
+  }
+  
 
-form label {
-  display: block;
-  margin-top: 10px;
-}
+  form.info-box {
+    background: #ffffff;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    width: 100%;
+  }
 
-input[type="text"],
-input[type="email"],
-input[type="tel"],
-input[type="date"],
-input[type="password"],
-select {
-  width: 100%;
-  padding: 8px;
-  margin-top: 4px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
-}
+  .info-box label {
+    display: block;
+    margin-bottom: 0.4rem;
+    font-weight: 500;
+  }
 
-button {
-  margin-top: 15px;
-  background-color: #004080;
-  color: white;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
+  .input-box,
+  .date-box {
+    width: 100%;
+    padding: 0.75rem;
+    margin-bottom: 0px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    transition: border-color 0.3s ease;
+  }
 
-button:hover {
-  background-color: #003060;
-}
+  .input-box:focus,
+  .date-box:focus {
+    border-color: #3498db;
+    outline: none;
+  }
+
+  .name-section,
+  .password-section,
+  .dob-gender-section {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .fname-section,
+  .lname-section,
+  .pass-section,
+  .confirm-pass-section,
+  .dob-gender-section > div {
+    flex: 1;
+    min-width: 48%;
+  }
+
+  .gender-label {
+    margin-bottom: 0.5rem;
+    display: block;
+  }
+
+  .own-work-radio {
+    margin-bottom: 1.5rem;
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .own-work-radio > div {
+    margin-top: 0.5rem;
+  }
+
+  .radio-options {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+    justify-content: center;
+    margin-top: 0.5rem;
+  }
+  
+
+  input[type="radio"] {
+    margin-right: 0.5rem;
+  }
+
+  .btn-section {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+
+  .btn {
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+
+  .create-account-btn {
+    background-color: #62b6b7;
+    color: white;
+  }
+
+  .create-account-btn:hover {
+    background-color: #5c9e9f;
+  }
+
+  .reset-fields-btn {
+    background-color: #bdc3c7;
+    color: #2c3e50;
+  }
+
+  .reset-fields-btn:hover {
+    background-color: #95a5a6;
+  }
+
+  @media (max-width: 600px) {
+    .fname-section,
+    .lname-section,
+    .pass-section,
+    .confirm-pass-section,
+    .dob-gender-section > div {
+      min-width: 100%;
+    }
+
+    .btn-section {
+      flex-direction: column;
+    }
+  }
