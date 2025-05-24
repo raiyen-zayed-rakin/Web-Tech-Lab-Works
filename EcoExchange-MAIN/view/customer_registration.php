@@ -1,3 +1,8 @@
+
+<?php
+include "../control/regi_control.php";
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,14 +13,17 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="../css/customer_registration.css">
+
 </head>
 <body>
-  <header>
+  <!-- <header>
     <h1 class="heading-title">Customer Registration</h1>
-  </header>
-
+  </header> -->
+  <?php 
+    require "../layouts/header.php"
+    ?>
   <main>
-    <form class="info-box" action="customer_registration.html" target="_self" method="post" id="registration-form">
+    <form class="info-box" action="customer_registration.php" target="_self" method="post" id="registration-form">
       <div class="name-section">
         <div class="fname-section">
           <label for="fname">First Name<span>*</span></label>
@@ -93,11 +101,19 @@
         <input class="btn reset-fields-btn" type="reset" value="Reset Fields" />
         <input class="btn create-account-btn" type="submit" value="Create Account" />
       </div>
-    </form>
+      <div class="login-footer">
+        Want be a seller? <a href="../view/seller-registration.php" class="login-register">Register as a seller</a>
+      </div>
+      <div class="login-footer">
+        Already have an account? <a href="../view/login.php" class="login-register">Login</a>
+      </div>
+</form>
       
   </main>
 
-  <footer></footer>
-  <script src="../js/customer_registration.js"></script>
+  <?php 
+    require "../layouts/footer.php";
+  ?>
+  <!-- <script src="../js/customer_registration.js"></script> -->
 </body>
 </html>
