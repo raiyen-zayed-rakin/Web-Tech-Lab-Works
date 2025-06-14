@@ -1,4 +1,7 @@
-<?php include 'validation.php'; ?>
+<?php 
+include 'validation.php';
+include "../control/sell_regi_control.php";
+ ?>
 <!DOCTYPE html>
 <html>
 <head>
