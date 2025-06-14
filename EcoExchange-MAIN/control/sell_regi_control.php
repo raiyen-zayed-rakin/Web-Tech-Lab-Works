@@ -32,7 +32,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Insert into database
     if (insertSeller($conn, $businessName, $businessAddress, $productCategory, $openingDate, $registerAs, $contactName, $contactEmail, $contactPhone, $username, $password)) {
-        echo "Seller registered successfully!";
+        echo "<script>alert('Seller Account Registered Successfully');</script>";
     } else {
         echo "Failed to register seller: " . mysqli_error($conn);
     }

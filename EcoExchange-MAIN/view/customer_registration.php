@@ -102,10 +102,10 @@ include "../control/cus_regi_control.php";
         <input class="btn create-account-btn" type="submit" value="Create Account" />
       </div>
       <div class="login-footer">
-        Want be a seller? <a href="../view/seller-registration.php" class="login-register">Register as a seller</a>
+        Want be a seller? <a href="seller-registration.php" class="login-register">Register as a seller</a>
       </div>
       <div class="login-footer">
-        Already have an account? <a href="../view/login.php" class="login-register">Login</a>
+        Already have an account? <a href="customer_login.php" class="login-register">Login</a>
       </div>
 </form>
       

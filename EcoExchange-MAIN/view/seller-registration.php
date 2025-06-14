@@ -16,6 +16,10 @@ include "../control/sell_regi_control.php";
 </head>
 <body>
 
+<?php 
+    require "../layouts/header.php"
+    ?>
+
 <h1 id="main-title">Seller Registration</h1>
 
 <form id="registrationForm" action="../view/seller-registration.php" method="post" autocomplete="on">
@@ -84,7 +88,9 @@ include "../control/sell_regi_control.php";
     <input type="submit" value="Create Account">
     <input type="reset" value="Reset Fields">
 </form>
-
+<?php 
+    require "../layouts/footer.php";
+  ?>
 <!-- External JavaScript File -->
 <script src="../js/seller_registration.js"></script>
 </body>
