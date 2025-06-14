@@ -1,6 +1,6 @@
 
 <?php
-include "../control/regi_control.php";
+include "../control/cus_regi_control.php";
 ?>
 
 <!DOCTYPE html>
