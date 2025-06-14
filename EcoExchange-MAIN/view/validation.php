@@ -55,7 +55,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     
     if (empty($errors)) {
-        echo "<p style='color: green;'>Form submitted successfully!</p>";
     } else {
         $keys = array_keys($errors);
         for ($i = 0; $i < count($errors); $i++) {

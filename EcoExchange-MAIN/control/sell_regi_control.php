@@ -13,6 +13,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Check for duplicate email or username
     if (isSellerExists($conn, $businessEmail, $username)) {
         echo "Error: Email or Username already exists.";
+        closeCon($conn);
+        exit;  // Stop execution here so insertSeller() is NOT called
     }
 
 
