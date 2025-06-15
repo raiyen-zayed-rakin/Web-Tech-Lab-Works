@@ -56,13 +56,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
     if (empty($errors)) {
     } else {
-        $keys = array_keys($errors);
-        for ($i = 0; $i < count($errors); $i++) {
-            $field = $keys[$i];
-            $msg = $errors[$field];
-            echo "<p class='error'>$msg</p>";
-        }
-        
+        // Do not echo errors here, just keep them in $errors array for display in form
     }
 }
 ?>
