@@ -54,8 +54,9 @@ input[type="checkbox"] {
 }
 
 /* Make radio button labels inline */
-label[for="individual"],
-label[for="company"] {
+label[for="owner"],
+label[for="manager"],
+label[for="other"] {
     display: inline;
     margin-left: 5px;
     margin-right: 15px;

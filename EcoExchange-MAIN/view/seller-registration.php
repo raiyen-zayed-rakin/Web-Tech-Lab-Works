@@ -25,29 +25,7 @@ include "../control/sell_regi_control.php";
 <form method="post" action="" id="registrationForm">
     <fieldset>
         <legend>Business Information</legend>
-        
-        <label for="businessName">Business Name:</label>
-        <input type="text" id="businessName" name="businessName" value="<?php echo htmlspecialchars($_POST['businessName'] ?? ''); ?>">
-        <span class="error"><?php echo $errors['businessName'] ?? ''; ?></span>
-        
-        <label for="businessAddress">Business Address:</label>
-        <input type="text" id="businessAddress" name="businessAddress" value="<?php echo htmlspecialchars($_POST['businessAddress'] ?? ''); ?>">
-        <span class="error"><?php echo $errors['businessAddress'] ?? ''; ?></span>
-        
-        <label for="productCategory">Product Category:</label>
-        <input type="text" id="productCategory" name="productCategory" value="<?php echo htmlspecialchars($_POST['productCategory'] ?? ''); ?>">
-        <span class="error"><?php echo $errors['productCategory'] ?? ''; ?></span>
-        
-        <label for="openingDate">Opening Date:</label>
-        <input type="date" id="openingDate" name="openingDate" value="<?php echo htmlspecialchars($_POST['openingDate'] ?? ''); ?>">
-        <span class="error"><?php echo $errors['openingDate'] ?? ''; ?></span>
-        
-        <label>Register As:</label>
-        <input type="radio" id="individual" name="registerAs" value="individual" <?php if (($_POST['registerAs'] ?? '') === 'individual') echo 'checked'; ?>>
-        <label for="individual" style="display: inline;">Individual</label>
-        <input type="radio" id="company" name="registerAs" value="company" <?php if (($_POST['registerAs'] ?? '') === 'company') echo 'checked'; ?>>
-        <label for="company" style="display: inline;">Company</label>
-        <span class="error"><?php echo $errors['registerAs'] ?? ''; ?></span>
+    
 
         <label for="businessName">Business Name:</label><br>
         <input type="text" id="businessName" name="businessName" placeholder="Enter business name" value="<?php echo htmlspecialchars($_POST['businessName'] ?? '', ENT_QUOTES); ?>"><br>
@@ -114,8 +92,8 @@ include "../control/sell_regi_control.php";
     <input type="reset" value="Clear">
     
     <div class="form-links">
-        <a href="login.php" class="form-link">Already have an account? Login</a>
-        <a href="customer-registration.php" class="form-link">Register as Customer</a>
+        <a href="../view/seller_login.php" class="form-link">Already have an account? Login</a>
+        <a href="../view/customer_registration.php" class="form-link">Register as Customer</a>
     </div>
 </form>
 
