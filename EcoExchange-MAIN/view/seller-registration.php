@@ -25,6 +25,7 @@ include "../control/sell_regi_control.php";
 <form method="post" action="" id="registrationForm">
     <fieldset>
         <legend>Business Information</legend>
+<<<<<<< HEAD
         
         <label for="businessName">Business Name:</label>
         <input type="text" id="businessName" name="businessName" value="<?php echo htmlspecialchars($_POST['businessName'] ?? ''); ?>">
@@ -48,6 +49,34 @@ include "../control/sell_regi_control.php";
         <input type="radio" id="company" name="registerAs" value="company" <?php if (($_POST['registerAs'] ?? '') === 'company') echo 'checked'; ?>>
         <label for="company" style="display: inline;">Company</label>
         <span class="error"><?php echo $errors['registerAs'] ?? ''; ?></span>
+=======
+
+        <label for="businessName">Business Name:</label><br>
+        <input type="text" id="businessName" name="businessName" placeholder="Enter business name" value="<?php echo htmlspecialchars($_POST['businessName'] ?? '', ENT_QUOTES); ?>"><br>
+        <span id="businessNameError" class="error"><?php echo $errors['businessName'] ?? ''; ?></span><br>
+
+        <label for="businessAddress">Business Address:</label><br>
+        <input type="text" id="businessAddress" name="businessAddress" placeholder="Enter business address" value="<?php echo htmlspecialchars($_POST['businessAddress'] ?? '', ENT_QUOTES); ?>"><br>
+
+        <label for="productCategory">Product/Service Category:</label><br>
+        <input type="text" id="productCategory" name="productCategory" placeholder="Enter product/service category" value="<?php echo htmlspecialchars($_POST['productCategory'] ?? '', ENT_QUOTES); ?>"><br>
+
+        <label for="openingDate">Official Opening Date:</label><br>
+        <input type="date" id="openingDate" name="openingDate" value="<?php echo htmlspecialchars($_POST['openingDate'] ?? '', ENT_QUOTES); ?>"><br>
+
+        <div class="radio_button">
+            <label>Register As:</label><br>
+            <input type="radio" id="owner" name="registerAs" value="owner" <?php if (isset($_POST['registerAs']) && $_POST['registerAs'] === 'owner') echo 'checked'; ?>>
+            <label for="owner">Owner</label>
+
+            <input type="radio" id="manager" name="registerAs" value="manager" <?php if (isset($_POST['registerAs']) && $_POST['registerAs'] === 'manager') echo 'checked'; ?>>
+            <label for="manager">Manager</label>
+
+            <input type="radio" id="other" name="registerAs" value="other" <?php if (isset($_POST['registerAs']) && $_POST['registerAs'] === 'other') echo 'checked'; ?>>
+            <label for="other">Other</label><br>
+            <span id="registerAsError" class="error"><?php echo $errors['registerAs'] ?? ''; ?></span><br>
+        </div>
+>>>>>>> ed52d59e4fb8d2cde5f2f39fcf7d62657a1a73e5
     </fieldset>
 
     <fieldset>
