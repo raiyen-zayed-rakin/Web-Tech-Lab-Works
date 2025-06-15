@@ -55,6 +55,8 @@ closeCon($conn);
     <link rel="stylesheet" href="../css/seller_panel.css">
 </head>
 <body>
+    <?php require "../layouts/header.php"; ?>
+
     <div class="profile-container">
         <h1>Seller Profile - <?php echo htmlspecialchars($_SESSION['business_name']); ?></h1>
         
@@ -93,8 +95,10 @@ closeCon($conn);
         </div>
         
         <div class="logout">
-            <a href="admin_logout.php">Logout</a>
+            <a href="seller_logout.php">Logout</a>
         </div>
     </div>
+    <?php require "../layouts/footer.php"; ?>
+
 </body>
 </html>

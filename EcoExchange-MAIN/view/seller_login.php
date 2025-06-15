@@ -13,6 +13,8 @@ if (isset($_SESSION['seller_id'])) {
     <link rel="stylesheet" href="../css/seller_panel.css">
 </head>
 <body>
+  <?php require "../layouts/header.php"; ?>
+
     <div class="login-container">
         <h1>Seller Login</h1>
         
@@ -27,5 +29,7 @@ if (isset($_SESSION['seller_id'])) {
         </form>
         <p>Don't have an account? <a href="seller-registration.php">Register here</a></p>
     </div>
+  <?php require "../layouts/footer.php"; ?>
+
 </body>
 </html>
