@@ -25,7 +25,6 @@ include "../control/sell_regi_control.php";
 <form method="post" action="" id="registrationForm">
     <fieldset>
         <legend>Business Information</legend>
-<<<<<<< HEAD
         
         <label for="businessName">Business Name:</label>
         <input type="text" id="businessName" name="businessName" value="<?php echo htmlspecialchars($_POST['businessName'] ?? ''); ?>">
@@ -49,7 +48,6 @@ include "../control/sell_regi_control.php";
         <input type="radio" id="company" name="registerAs" value="company" <?php if (($_POST['registerAs'] ?? '') === 'company') echo 'checked'; ?>>
         <label for="company" style="display: inline;">Company</label>
         <span class="error"><?php echo $errors['registerAs'] ?? ''; ?></span>
-=======
 
         <label for="businessName">Business Name:</label><br>
         <input type="text" id="businessName" name="businessName" placeholder="Enter business name" value="<?php echo htmlspecialchars($_POST['businessName'] ?? '', ENT_QUOTES); ?>"><br>
@@ -76,7 +74,6 @@ include "../control/sell_regi_control.php";
             <label for="other">Other</label><br>
             <span id="registerAsError" class="error"><?php echo $errors['registerAs'] ?? ''; ?></span><br>
         </div>
->>>>>>> ed52d59e4fb8d2cde5f2f39fcf7d62657a1a73e5
     </fieldset>
 
     <fieldset>

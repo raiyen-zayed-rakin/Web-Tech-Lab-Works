@@ -33,14 +33,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $errors['contactPhone'] = "Phone must be 11 digits";
     }
 
-<<<<<<< HEAD
     // Validate account fields
     if (empty($username)) $errors['username'] = "Username is required";
     if (empty($_POST["password"])) {
         $errors['password'] = "Password is required";
     } elseif (strlen($_POST["password"]) < 6) {
         $errors['password'] = "Password must be 6+ characters";
-=======
     if ($_POST["businessAddress"] == "") {
         $errors['businessAddress'] = "Business Address is required.";
     }
@@ -86,8 +84,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (empty($errors)) {
     } else {
         // Do not echo errors here, just keep them in $errors array for display in form
->>>>>>> ed52d59e4fb8d2cde5f2f39fcf7d62657a1a73e5
     }
     if (!$agree_terms) $errors['agree_terms'] = "You must agree to terms";
+}
 }
 ?>

@@ -93,7 +93,7 @@ closeCon($conn);
         </div>
         
         <div class="logout">
-            <a href="seller_logout.php">Logout</a>
+            <a href="admin_logout.php">Logout</a>
         </div>
     </div>
 </body>
