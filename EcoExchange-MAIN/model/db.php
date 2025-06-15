@@ -86,11 +86,73 @@ function insertSeller($conn, $businessName, $businessAddress, $productCategory, 
 }
 
 function isSellerExists($conn, $email, $username) {
-    $sql = "SELECT * FROM sellers WHERE contact_email = '$email' OR username = '$username'";
+    $email = mysqli_real_escape_string($conn, $email);
+    $username = mysqli_real_escape_string($conn, $username);
+    $sql = "SELECT * FROM sellers WHERE contact_email='$email' OR username='$username'";
     $result = mysqli_query($conn, $sql);
     return mysqli_num_rows($result) > 0;
 }
 
+function isSellerValid($conn, $username, $password) {
+    $stmt = mysqli_prepare($conn, "SELECT seller_id, password_hash FROM sellers WHERE username = ?");
+    mysqli_stmt_bind_param($stmt, "s", $username);
+    mysqli_stmt_execute($stmt);
+    $result = mysqli_stmt_get_result($stmt);
+
+    if (mysqli_num_rows($result) === 1) {
+        $row = mysqli_fetch_assoc($result);
+        if (password_verify($password, $row['password_hash'])) {
+            return $row['seller_id'];
+        }
+    }
+    return false;
+}
+
+// Add this function to your existing db.php
+function verifySellerLogin($conn, $username, $password) {
+    $sql = "SELECT seller_id, username, business_name, password_hash FROM sellers WHERE username=?";
+    $stmt = mysqli_prepare($conn, $sql);
+    mysqli_stmt_bind_param($stmt, "s", $username);
+    mysqli_stmt_execute($stmt);
+    $result = mysqli_stmt_get_result($stmt);
+    
+    if (mysqli_num_rows($result) == 1) {
+        $seller = mysqli_fetch_assoc($result);
+        if (password_verify($password, $seller['password_hash'])) {
+            return $seller;
+        }
+    }
+    return false;
+}
+
+function verify_seller($conn, $username, $password) {
+    $username = mysqli_real_escape_string($conn, $username);
+    $sql = "SELECT id, username, business_name, password_hash FROM sellers WHERE username = '$username'";
+    $result = mysqli_query($conn, $sql);
+    
+    if (mysqli_num_rows($result) == 1) {
+        $seller = mysqli_fetch_assoc($result);
+        if (password_verify($password, $seller['password_hash'])) {
+            return $seller;
+        }
+    }
+    return false;
+}
+
+function verify_admin($conn, $username, $password) {
+    $username = mysqli_real_escape_string($conn, $username);
+    
+    $sql = "SELECT admin_id, password_hash FROM admins WHERE username = '$username'";
+    $result = mysqli_query($conn, $sql);
+    
+    if (mysqli_num_rows($result) == 1) {
+        $admin = mysqli_fetch_assoc($result);
+        if (password_verify($password, $admin['password_hash'])) {
+            return $admin['admin_id'];
+        }
+    }
+    return false;
+}
 
 
 function closeCon($conn){

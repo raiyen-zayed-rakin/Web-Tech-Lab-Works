@@ -1,97 +1,100 @@
-<?php 
-include 'validation.php';
+<?php
+session_start();
 include "../control/sell_regi_control.php";
- ?>
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
     <title>Seller Registration</title>
-    <link rel="stylesheet" href="../css/seller_registration.css">
-    <style>
-        .error {
-            color: red;
-            font-size: 13px;
-        }
+<link rel="stylesheet" href="../css/seller_registration.css">    <style>
+        .error { color: red; font-size: 13px; }
+        .success { color: green; text-align: center; margin: 10px 0; }
     </style>
 </head>
 <body>
 
-<?php 
-    require "../layouts/header.php"
-    ?>
+<?php require "../layouts/header.php"; ?>
 
 <h1 id="main-title">Seller Registration</h1>
 
-<form id="registrationForm" action="../view/seller-registration.php" method="post" autocomplete="on">
+<?php if (isset($_SESSION['success'])): ?>
+    <div class="success"><?php echo $_SESSION['success']; unset($_SESSION['success']); ?></div>
+<?php endif; ?>
+
+<form method="post" action="" id="registrationForm">
     <fieldset>
         <legend>Business Information</legend>
-
-        <label for="businessName">Business Name:</label><br>
-        <input type="text" id="businessName" name="businessName" placeholder="Enter business name"><br>
-        <span id="businessNameError" class="error"></span><br>
-
-        <label for="businessAddress">Business Address:</label><br>
-        <input type="text" id="businessAddress" name="businessAddress" placeholder="Enter business address"><br>
-
-        <label for="productCategory">Product/Service Category:</label><br>
-        <input type="text" id="productCategory" name="productCategory" placeholder="Enter product/service category"><br>
-
-        <label for="openingDate">Official Opening Date:</label><br>
-        <input type="date" id="openingDate" name="openingDate"><br>
-
-        <div class="radio_button">
-            <label>Register As:</label><br>
-            <input type="radio" id="owner" name="registerAs" value="owner">
-            <label for="owner">Owner</label>
-
-            <input type="radio" id="manager" name="registerAs" value="manager">
-            <label for="manager">Manager</label>
-
-            <input type="radio" id="other" name="registerAs" value="other">
-            <label for="other">Other</label><br>
-            <span id="registerAsError" class="error"></span><br>
-        </div>
+        
+        <label for="businessName">Business Name:</label>
+        <input type="text" id="businessName" name="businessName" value="<?php echo htmlspecialchars($_POST['businessName'] ?? ''); ?>">
+        <span class="error"><?php echo $errors['businessName'] ?? ''; ?></span>
+        
+        <label for="businessAddress">Business Address:</label>
+        <input type="text" id="businessAddress" name="businessAddress" value="<?php echo htmlspecialchars($_POST['businessAddress'] ?? ''); ?>">
+        <span class="error"><?php echo $errors['businessAddress'] ?? ''; ?></span>
+        
+        <label for="productCategory">Product Category:</label>
+        <input type="text" id="productCategory" name="productCategory" value="<?php echo htmlspecialchars($_POST['productCategory'] ?? ''); ?>">
+        <span class="error"><?php echo $errors['productCategory'] ?? ''; ?></span>
+        
+        <label for="openingDate">Opening Date:</label>
+        <input type="date" id="openingDate" name="openingDate" value="<?php echo htmlspecialchars($_POST['openingDate'] ?? ''); ?>">
+        <span class="error"><?php echo $errors['openingDate'] ?? ''; ?></span>
+        
+        <label>Register As:</label>
+        <input type="radio" id="individual" name="registerAs" value="individual" <?php if (($_POST['registerAs'] ?? '') === 'individual') echo 'checked'; ?>>
+        <label for="individual" style="display: inline;">Individual</label>
+        <input type="radio" id="company" name="registerAs" value="company" <?php if (($_POST['registerAs'] ?? '') === 'company') echo 'checked'; ?>>
+        <label for="company" style="display: inline;">Company</label>
+        <span class="error"><?php echo $errors['registerAs'] ?? ''; ?></span>
     </fieldset>
 
     <fieldset>
         <legend>Contact Information</legend>
-
-        <label for="contactName">Contact Person Name:</label><br>
-        <input type="text" id="contactName" name="contactName" placeholder="Enter contact person name"><br>
-
-        <label for="contactEmail">Business Email:</label><br>
-        <input type="email" id="contactEmail" name="contactEmail" placeholder="Enter business email"><br>
-        <span id="contactEmailError" class="error"></span><br>
-
-        <label for="contactPhone">Phone Number:</label><br>
-        <input type="tel" id="contactPhone" name="contactPhone" placeholder="Enter phone number"><br>
-        <span id="contactPhoneError" class="error"></span><br>
+        
+        <label for="contactName">Contact Person:</label>
+        <input type="text" id="contactName" name="contactName" value="<?php echo htmlspecialchars($_POST['contactName'] ?? ''); ?>">
+        <span class="error"><?php echo $errors['contactName'] ?? ''; ?></span>
+        
+        <label for="contactEmail">Contact Email:</label>
+        <input type="email" id="contactEmail" name="contactEmail" value="<?php echo htmlspecialchars($_POST['contactEmail'] ?? ''); ?>">
+        <span class="error"><?php echo $errors['contactEmail'] ?? ''; ?></span>
+        
+        <label for="contactPhone">Contact Phone:</label>
+        <input type="tel" id="contactPhone" name="contactPhone" value="<?php echo htmlspecialchars($_POST['contactPhone'] ?? ''); ?>">
+        <span class="error"><?php echo $errors['contactPhone'] ?? ''; ?></span>
     </fieldset>
 
     <fieldset>
         <legend>Account Details</legend>
+        
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" value="<?php echo htmlspecialchars($_POST['username'] ?? ''); ?>">
+        <span class="error"><?php echo $errors['username'] ?? ''; ?></span>
+        
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password">
+        <span class="error"><?php echo $errors['password'] ?? ''; ?></span>
+        
+        <input type="checkbox" id="agree_terms" name="agree_terms" <?php if (isset($_POST['agree_terms'])) echo 'checked'; ?>>
+        <label for="agree_terms">I agree to terms</label>
+        <span class="error"><?php echo $errors['agree_terms'] ?? ''; ?></span>
+    </fieldset>
 
-        <label for="username">Username:</label><br>
-        <input type="text" id="username" name="username" required placeholder="Enter username"><br>
-
-        <label for="password">Password:</label><br>
-        <input type="password" id="password" name="password" required placeholder="Enter password"><br>
-        <span id="passwordError" class="error"></span><br>
-
-        <label for="agree_terms">Agree to Terms:</label><br>
-        <input type="checkbox" id="agree_terms" name="agree_terms" required>
-        <label for="agree_terms">I agree to the 
-            <a href="https://web.facebook.com/avoy.mollick.562" target="_blank">Terms and Conditions</a>
-        </label><br>
-    </fieldset><br>
-
-    <input type="submit" value="Create Account">
-    <input type="reset" value="Reset Fields">
+    <span class="error"><?php echo $errors['duplicate'] ?? $errors['db'] ?? ''; ?></span>
+    
+    <input type="submit" value="Register">
+    <input type="reset" value="Clear">
+    
+    <div class="form-links">
+        <a href="login.php" class="form-link">Already have an account? Login</a>
+        <a href="customer-registration.php" class="form-link">Register as Customer</a>
+    </div>
 </form>
-<?php 
-    require "../layouts/footer.php";
-  ?>
-<!-- External JavaScript File -->
+
+<?php require "../layouts/footer.php"; ?>
+
 <script src="../js/seller_registration.js"></script>
 </body>
 </html>
