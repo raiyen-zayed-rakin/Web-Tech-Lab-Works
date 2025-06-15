@@ -37,7 +37,7 @@ include "../control/sell_regi_control.php";
         <label for="productCategory">Product/Service Category:</label><br>
         <input type="text" id="productCategory" name="productCategory" placeholder="Enter product/service category" value="<?php echo htmlspecialchars($_POST['productCategory'] ?? '', ENT_QUOTES); ?>"><br>
 
-        <label for="openingDate">Official Opening Date:</label><br>
+<label for="openingDate">Official Opening Date:</label><br>
         <input type="date" id="openingDate" name="openingDate" value="<?php echo htmlspecialchars($_POST['openingDate'] ?? '', ENT_QUOTES); ?>"><br>
 
         <div class="radio_button">
@@ -49,7 +49,7 @@ include "../control/sell_regi_control.php";
             <label for="manager">Manager</label>
 
             <input type="radio" id="other" name="registerAs" value="other" <?php if (isset($_POST['registerAs']) && $_POST['registerAs'] === 'other') echo 'checked'; ?>>
-            <label for="other">Other</label><br>
+            <lgit abel for="other">Other</label><br>
             <span id="registerAsError" class="error"><?php echo $errors['registerAs'] ?? ''; ?></span><br>
         </div>
     </fieldset>
