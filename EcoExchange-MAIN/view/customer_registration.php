@@ -114,6 +114,6 @@ include "../control/cus_regi_control.php";
   <?php 
     require "../layouts/footer.php";
   ?>
-  <!-- <script src="../js/customer_registration.js"></script> -->
+  <script src="../js/customer_registration.js"></script>
 </body>
 </html>
