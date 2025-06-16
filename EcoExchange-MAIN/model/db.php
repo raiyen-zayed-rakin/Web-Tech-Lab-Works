@@ -26,12 +26,11 @@ function isCustomerExists($conn, $email, $username) {
 }
 
 function isCustomerValid($conn, $email, $password) {
-    // Prepare the SQL statement
+    
     $stmt = mysqli_prepare($conn, "SELECT password_hash FROM customers WHERE email = ?");
     mysqli_stmt_bind_param($stmt, "s", $email);
     mysqli_stmt_execute($stmt);
 
-    // Get the result
     $result = mysqli_stmt_get_result($stmt);
 
     // Check if a matching user is found

@@ -24,7 +24,7 @@
       <div class="header-right">
         <i class="icon-heart">🤍</i>
         <a href="seller_profile.php" class="sign">Profile</a>
-        <a href="#" class="logout">Log Out</a>
+        <a href="customer_login.php" class="logout">Log Out</a>
       </div>
     </div>
 

@@ -30,10 +30,6 @@ include "../control/cus_logi_control.php";
       <form method="post" class="login-form" action="customer_login.php">
         <input type="email" name="email" class="login-input" placeholder="Email" required />
         <input type="password" name="password" class="login-input" placeholder="Password" required />
-        <div class="login-options">
-          <label><input type="checkbox" /> Remember me</label>
-          <a href="#" class="login-link">Forget Password</a>
-        </div>
         <button type="submit" class="login-button">Login</button>
       </form>
       <div class="login-footer">
