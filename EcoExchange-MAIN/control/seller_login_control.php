@@ -35,7 +35,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $_SESSION['username'] = $seller['username'];
             $_SESSION['business_name'] = $seller['business_name'];
             mysqli_close($conn);
-            header("Location: ../view/seller_profile.php");
+            header("Location: ../view/home.php");
             exit();
         }
     }
