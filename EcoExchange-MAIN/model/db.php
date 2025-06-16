@@ -108,34 +108,73 @@ function isSellerValid($conn, $username, $password) {
     return false;
 }
 
+// Add this function to your db.php
 function verifySellerLogin($conn, $username, $password) {
     $sql = "SELECT seller_id, username, business_name, password_hash FROM sellers WHERE username=?";
     $stmt = mysqli_prepare($conn, $sql);
+    
+    if (!$stmt) {
+        return ['error' => 'Database preparation failed'];
+    }
+
     mysqli_stmt_bind_param($stmt, "s", $username);
     mysqli_stmt_execute($stmt);
     $result = mysqli_stmt_get_result($stmt);
-    
+
     if (mysqli_num_rows($result) == 1) {
         $seller = mysqli_fetch_assoc($result);
         if (password_verify($password, $seller['password_hash'])) {
-            return $seller;
+            return [
+                'success' => true,
+                'seller_id' => $seller['seller_id'],
+                'username' => $seller['username'],
+                'business_name' => $seller['business_name']
+            ];
         }
     }
-    return false;
+    
+    return ['error' => 'Invalid username or password'];
 }
 
-function verify_seller($conn, $username, $password) {
-    $username = mysqli_real_escape_string($conn, $username);
-    $sql = "SELECT id, username, business_name, password_hash FROM sellers WHERE username = '$username'";
-    $result = mysqli_query($conn, $sql);
+
+/**
+ * Get seller data by ID
+ */
+function getSellerById($conn, $seller_id) {
+    $stmt = mysqli_prepare($conn, "SELECT * FROM sellers WHERE seller_id=?");
+    mysqli_stmt_bind_param($stmt, "i", $seller_id);
+    mysqli_stmt_execute($stmt);
+    $result = mysqli_stmt_get_result($stmt);
+    return mysqli_fetch_assoc($result);
+}
+
+/**
+ * Update seller profile
+ */
+function updateSellerProfile($conn, $seller_id, $businessName, $contactEmail, $contactPhone, $businessAddress) {
+    $sql = "UPDATE sellers SET 
+            business_name = ?,
+            contact_email = ?,
+            contact_phone = ?,
+            business_address = ?
+            WHERE seller_id = ?";
     
-    if (mysqli_num_rows($result) == 1) {
-        $seller = mysqli_fetch_assoc($result);
-        if (password_verify($password, $seller['password_hash'])) {
-            return $seller;
-        }
-    }
-    return false;
+    $stmt = mysqli_prepare($conn, $sql);
+    mysqli_stmt_bind_param($stmt, "ssssi", $businessName, $contactEmail, $contactPhone, $businessAddress, $seller_id);
+    return mysqli_stmt_execute($stmt);
+}
+
+/**
+ * Verify seller password
+ */
+function verifySellerPassword($conn, $seller_id, $password) {
+    $stmt = mysqli_prepare($conn, "SELECT password_hash FROM sellers WHERE seller_id=?");
+    mysqli_stmt_bind_param($stmt, "i", $seller_id);
+    mysqli_stmt_execute($stmt);
+    $result = mysqli_stmt_get_result($stmt);
+    $seller = mysqli_fetch_assoc($result);
+    
+    return ($seller && password_verify($password, $seller['password_hash']));
 }
 
 
