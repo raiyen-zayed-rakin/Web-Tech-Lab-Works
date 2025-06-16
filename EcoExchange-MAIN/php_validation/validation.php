@@ -83,7 +83,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
     if (empty($errors)) {
     } else {
-        // Do not echo errors here, just keep them in $errors array for display in form
     }
     if (!$agree_terms) $errors['agree_terms'] = "You must agree to terms";
 }
