@@ -16,7 +16,7 @@ include "../control/sell_regi_control.php";
 
 <?php require "../layouts/header.php"; ?>
 
-<h1 id="main-title">Seller Registration</h1>
+<h1 id="main-title" style="text-align: center">Seller Registration</h1>
 
 <?php if (isset($_SESSION['success'])): ?>
     <div class="success"><?php echo $_SESSION['success']; unset($_SESSION['success']); ?></div>
