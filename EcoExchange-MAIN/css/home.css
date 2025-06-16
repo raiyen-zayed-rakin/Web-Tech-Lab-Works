@@ -89,11 +89,24 @@ button {
   cursor: pointer;
 }
 
-.signin {
-  color: #e91e63;
-  text-decoration: none;
+.sign {
+  background-color: rgba(132, 209, 135, 1);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
   font-weight: bold;
 }
+
+.logout {
+  background-color: rgba(132, 209, 135, 1);
+  color: white;
+  border: none;
+  padding: 0 20px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
 
 /* HEADER: Navbar */
 .navbar {

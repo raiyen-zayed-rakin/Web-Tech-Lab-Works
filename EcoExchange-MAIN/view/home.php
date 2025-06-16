@@ -23,7 +23,8 @@
 
       <div class="header-right">
         <i class="icon-heart">🤍</i>
-        <a href="#" class="signin">Sign In</a>
+        <a href="seller_profile.php" class="sign">Profile</a>
+        <a href="#" class="logout">Log Out</a>
       </div>
     </div>
 
