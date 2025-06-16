@@ -107,7 +107,6 @@ function isSellerValid($conn, $username, $password) {
     return false;
 }
 
-// Add this function to your db.php
 function verifySellerLogin($conn, $username, $password) {
     $sql = "SELECT seller_id, username, business_name, password_hash FROM sellers WHERE username=?";
     $stmt = mysqli_prepare($conn, $sql);
