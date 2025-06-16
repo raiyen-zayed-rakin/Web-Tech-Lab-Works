@@ -97,3 +97,24 @@ button:hover {
 .logout a:hover {
     text-decoration: underline;
 }
+.delete-account {
+    margin-top: 30px;
+    padding: 20px;
+    border: 1px solid #ffcccc;
+    background-color: #fff5f5;
+    border-radius: 5px;
+}
+
+.delete-account h3 {
+    color: #cc0000;
+    margin-top: 0;
+}
+
+.delete-btn {
+    background-color: #ff3333;
+    color: white;
+}
+
+.delete-btn:hover {
+    background-color: #cc0000;
+}

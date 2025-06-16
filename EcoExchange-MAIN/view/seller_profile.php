@@ -46,7 +46,18 @@ require "../control/seller_profile_control.php";
                 <button type="submit" name="update">Update Profile</button>
             </form>
         </div>
-        
+
+        <div class="delete-account">
+    <form method="post" onsubmit="return confirm('Are you sure you want to permanently delete your account? This cannot be undone!')">
+        <h3>Delete Account</h3>
+        <div class="form-group">
+            <label>Enter Password to Confirm:</label>
+            <input type="password" name="password" required>
+        </div>
+        <button type="submit" name="delete" class="delete-btn">Delete My Account</button>
+    </form>
+    
+</div>
         <div class="logout">
             <a href="seller_logout.php">Logout</a>
         </div>

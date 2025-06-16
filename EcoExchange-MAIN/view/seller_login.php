@@ -27,7 +27,11 @@ if (isset($_SESSION['seller_id'])) {
             <input type="password" name="password" placeholder="Password" required>
             <button type="submit">Login</button>
         </form>
-        <p>Don't have an account? <a href="seller-registration.php">Register here</a></p>
+        <a href="seller-registration.php">Register here</a>
+        <p>or</p>
+        <a href="../view/customer_login.php">Login as Customer</a>
+
+
     </div>
   <?php require "../layouts/footer.php"; ?>
 

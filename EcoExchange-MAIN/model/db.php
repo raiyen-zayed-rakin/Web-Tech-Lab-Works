@@ -108,7 +108,6 @@ function isSellerValid($conn, $username, $password) {
     return false;
 }
 
-// Add this function to your existing db.php
 function verifySellerLogin($conn, $username, $password) {
     $sql = "SELECT seller_id, username, business_name, password_hash FROM sellers WHERE username=?";
     $stmt = mysqli_prepare($conn, $sql);
@@ -139,21 +138,13 @@ function verify_seller($conn, $username, $password) {
     return false;
 }
 
-function verify_admin($conn, $username, $password) {
-    $username = mysqli_real_escape_string($conn, $username);
-    
-    $sql = "SELECT admin_id, password_hash FROM admins WHERE username = '$username'";
-    $result = mysqli_query($conn, $sql);
-    
-    if (mysqli_num_rows($result) == 1) {
-        $admin = mysqli_fetch_assoc($result);
-        if (password_verify($password, $admin['password_hash'])) {
-            return $admin['admin_id'];
-        }
-    }
-    return false;
-}
 
+function deleteSeller($conn, $seller_id) {
+    $sql = "DELETE FROM sellers WHERE seller_id=?";
+    $stmt = mysqli_prepare($conn, $sql);
+    mysqli_stmt_bind_param($stmt, "i", $seller_id);
+    return mysqli_stmt_execute($stmt);
+}
 
 function closeCon($conn){
     return mysqli_close($conn);
